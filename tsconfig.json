@@ -17,5 +17,12 @@
   ],
   "include": [
     "src/**/*"
-  ]
+  ],
+  "typedocOptions": {
+    "out": "docs/",
+    "exclude": "src/**/*.spec.ts",
+    "includeVersion": true,
+    "readme": "README.md",
+    "entryPoints": ["src/index.ts"]
+  }
 }

@@ -6,6 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "build:docs": "typedoc && cp CHANGELOG.md docs/ && cp CONTRIBUTING.md docs/ && cp README.md docs/ && cp LICENSE docs/",
     "changelog": "git-chglog -o CHANGELOG.md --next-tag v$(grep '\\\"version\\\":' package.json | grep -v git-chglog | awk -F '\\\"' '{print $4}')",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -34,6 +35,8 @@
     "jest": "27.4.5",
     "ts-jest": "27.1.2",
     "typescript": "4.5.4",
+    "typedoc": "0.22.10",
+    "typedoc-plugin-markdown": "3.11.7",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-config-prettier": "8.3.0",
     "prettier": "2.5.1"
