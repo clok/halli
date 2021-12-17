@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2020",
+    "declaration": true,
+    "strictNullChecks": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "lib": [
+      "es2020"
+    ]
+  },
+  "exclude": [
+    "src/**/*.spec.ts",
+    "node_modules",
+    "dist"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}
