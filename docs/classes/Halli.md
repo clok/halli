@@ -1,4 +1,4 @@
-[halli - v0.0.0](../README.md) / [Exports](../modules.md) / Halli
+[halli - v0.1.0](../README.md) / [Exports](../modules.md) / Halli
 
 # Class: Halli
 
@@ -35,7 +35,7 @@ to Red gradient with 10 steps between each source color.
 
 #### Defined in
 
-[halli.ts:17](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L17)
+[halli.ts:17](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L17)
 
 ## Properties
 
@@ -45,7 +45,7 @@ to Red gradient with 10 steps between each source color.
 
 #### Defined in
 
-[halli.ts:9](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L9)
+[halli.ts:9](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L9)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[halli.ts:10](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L10)
+[halli.ts:10](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L10)
 
 ## Methods
 
@@ -82,7 +82,7 @@ array of string hex color codes
 
 #### Defined in
 
-[halli.ts:90](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L90)
+[halli.ts:90](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L90)
 
 ___
 
@@ -113,7 +113,7 @@ array of string hex color codes
 
 #### Defined in
 
-[halli.ts:139](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L139)
+[halli.ts:139](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L139)
 
 ___
 
@@ -141,7 +141,7 @@ color code in string form
 
 #### Defined in
 
-[halli.ts:62](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L62)
+[halli.ts:62](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L62)
 
 ___
 
@@ -165,7 +165,7 @@ Useful for checking front padding of a hex color code
 
 #### Defined in
 
-[halli.ts:45](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L45)
+[halli.ts:45](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L45)
 
 ___
 
@@ -189,7 +189,7 @@ R, G, B codes
 
 #### Defined in
 
-[halli.ts:31](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L31)
+[halli.ts:31](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L31)
 
 ___
 
@@ -213,7 +213,7 @@ R, G, B, A codes
 
 #### Defined in
 
-[halli.ts:187](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L187)
+[halli.ts:187](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L187)
 
 ___
 
@@ -237,4 +237,4 @@ rgb(r, g, b)
 
 #### Defined in
 
-[halli.ts:207](https://github.com/clok/halli/blob/c23a51b/src/halli.ts#L207)
+[halli.ts:207](https://github.com/clok/halli/blob/a4568c5/src/halli.ts#L207)
