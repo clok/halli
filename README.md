@@ -16,7 +16,7 @@ Recently, I have found the need for generating colors. So, here we are.
 
 ## Usage
 
-> See [class documentation](./docs)
+> See [`Halli` class documentation](./docs/classes/Halli.md)
 
 ```typescript
 import { Halli } from 'halli'
