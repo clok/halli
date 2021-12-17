@@ -6,14 +6,14 @@ type IRGB = {
 }
 
 export class Halli {
-  colors: any[]
-  triColors: any[]
+  colors: string[]
+  triColors: string[]
 
   /**
-      Initialize object with a default 10 color array fading from
-      White to Red and with a Tri-Color array from Green to Yellow
-      to Red gradient with 10 steps between each source color.
-    */
+   * Initialize object with a default 10 color array fading from
+   * White to Red and with a Tri-Color array from Green to Yellow
+   * to Red gradient with 10 steps between each source color.
+   */
   constructor() {
     // Generate default Colors Array with White to Red in 10 steps
     this.colors = this.genHexArray(0xffffff, 0xff0000, 10)
@@ -24,8 +24,9 @@ export class Halli {
 
   /**
    * Break down hex value into RGB components
-   * @param hex
-   * @private
+   *
+   * @param hex - hexadecimal number representing color
+   * @returns R, G, B codes
    */
   private static getRGBComponents(hex: number): IRGB {
     const r = hex >> 16
@@ -37,7 +38,9 @@ export class Halli {
 
   /**
    * Useful for checking front padding of a hex color code
-   * @param hexStr
+   *
+   * @param hexStr - string representation of hex color code
+   * @returns 0 front padded hex color code
    */
   private static frontPad(hexStr: string): string {
     while (hexStr.length < 6) {
@@ -50,11 +53,13 @@ export class Halli {
    * Select a color between color 1 (hc1) and color 2 (hc2)
    * based on an input ratio that denotes the point in the
    * gradient color should be selected from.
-   * @param hc1
-   * @param hc2
-   * @param ratio
+   *
+   * @param hc1 - hexadecimal number representing color
+   * @param hc2 - hexadecimal number representing color
+   * @param ratio - the point in the gradient color to be selected
+   * @returns color code in string form
    */
-  public pickHex(hc1: number, hc2: number, ratio: number) {
+  public pickHex(hc1: number, hc2: number, ratio: number): string {
     if (ratio > 1) ratio = 1
 
     // Break hc1 into RGB components
@@ -76,9 +81,11 @@ export class Halli {
   /**
    * Select n=steps colors between color 1 (hc1) and color 2 (hc2)
    * and populate a return array.
-   * @param hc1
-   * @param hc2
-   * @param steps
+   *
+   * @param hc1 - hexadecimal number representing color
+   * @param hc2 - hexadecimal number representing color
+   * @param steps - the number of colors to generate between two colors
+   * @returns array of string hex color codes
    */
   public genHexArray(hc1: number, hc2: number, steps: number): string[] {
     const colorArray: string[] = []
@@ -117,13 +124,18 @@ export class Halli {
   }
 
   /**
-      genMultiHexArray will take an input array of any number of hex colors
-      and the number of steps to create a smooth gradient fade between the
-      colors in sequence.
-      Example: input = [0x00FF00, 0xFFFF00, 0xFF0000] with steps = 10
-      will produce a Green to Yellow to Red gradient with 10 steps between
-      each source color. Total of 23 color codes.
-    */
+   * genMultiHexArray will take an input array of any number of hex colors
+   * and the number of steps to create a smooth gradient fade between the
+   * colors in sequence.
+   *
+   * Example: input = [0x00FF00, 0xFFFF00, 0xFF0000] with steps = 10
+   * will produce a Green to Yellow to Red gradient with 10 steps between
+   * each source color. Total of 23 color codes.
+   *
+   * @param input - array of hexadecimal numbers representing colors
+   * @param steps - the number of colors to generate between two colors
+   * @returns array of string hex color codes
+   */
   public genMultiHexArray(input: number[], steps: number): string[] {
     const multiColor: string[] = []
 
@@ -167,8 +179,10 @@ export class Halli {
   }
 
   /**
-   * function will return an array with [r,g,b,a] set to appropriate values.
-   * @param hex
+   * Function will return an object with \{r,g,b,a\} set to appropriate values.
+   *
+   * @param hex - string representation of a color
+   * @returns R, G, B, A codes
    */
   public static hexToRGBA(hex: string): IRGB {
     // Break hc1 into RGB components
@@ -186,18 +200,13 @@ export class Halli {
 
   /**
    * Function will return a 'rgb( r,g,b )' string set to the appropriate values.
-   * @param hex
+   *
+   * @param hex - string representation of a color
+   * @returns rgb(r, g, b)
    */
   public static hexToRGBstr(hex: string): string {
     // Break hc1 into RGB components
-    return (
-      'rgb( ' +
-      parseInt(hex.substring(0, 2), 16) +
-      ', ' +
-      parseInt(hex.substring(2, 4), 16) +
-      ', ' +
-      parseInt(hex.substring(4, 6), 16) +
-      ' )'
-    )
+    const rgba = Halli.hexToRGBA(hex)
+    return `rgb(${rgba.r}, ${rgba.g}, ${rgba.b})`
   }
 }

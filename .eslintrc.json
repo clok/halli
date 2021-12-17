@@ -11,7 +11,7 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "jest"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "eslint-plugin-tsdoc", "jest"],
   "rules": {
     "max-len": ["warn", {
       "code": 160,

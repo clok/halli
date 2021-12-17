@@ -6,6 +6,11 @@ describe('Halli', () => {
       const picker = new Halli()
       expect(picker.pickHex(0x00000, 0xffffff, 0.5)).toBe('7f7f7f')
     })
+
+    it('consistently returns the same value for a ratio in range [ratio > 1]', () => {
+      const picker = new Halli()
+      expect(picker.pickHex(0x00000, 0xffffff, 1.5)).toBe('ffffff')
+    })
   })
 
   describe('genHexArray', () => {
@@ -44,6 +49,22 @@ describe('Halli', () => {
         '1a9ff00',
         'ff0000',
       ])
+    })
+  })
+
+  describe('hexToRGBA', () => {
+    it('consistently returns the same value', () => {
+      const check = Halli.hexToRGBA('ffffff')
+      expect(check.r).toEqual(255)
+      expect(check.g).toEqual(255)
+      expect(check.b).toEqual(255)
+      expect(check.a).toEqual(255)
+    })
+  })
+
+  describe('hexToRGBstr', () => {
+    it('consistently returns the same value', () => {
+      expect(Halli.hexToRGBstr('ffffff')).toBe('rgb(255, 255, 255)')
     })
   })
 })
