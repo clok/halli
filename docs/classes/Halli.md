@@ -1,4 +1,4 @@
-[halli - v0.1.2](../README.md) / [Exports](../modules.md) / Halli
+[halli - v0.2.0](../README.md) / [Exports](../modules.md) / Halli
 
 # Class: Halli
 
@@ -18,6 +18,7 @@
 - [genHexArray](Halli.md#genhexarray)
 - [genMultiHexArray](Halli.md#genmultihexarray)
 - [pickHex](Halli.md#pickhex)
+- [convertToColorString](Halli.md#converttocolorstring)
 - [frontPad](Halli.md#frontpad)
 - [getRGBComponents](Halli.md#getrgbcomponents)
 - [hexToRGBA](Halli.md#hextorgba)
@@ -35,7 +36,7 @@ to Red gradient with 10 steps between each source color.
 
 #### Defined in
 
-[halli.ts:17](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L17)
+[halli.ts:17](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L17)
 
 ## Properties
 
@@ -45,7 +46,7 @@ to Red gradient with 10 steps between each source color.
 
 #### Defined in
 
-[halli.ts:9](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L9)
+[halli.ts:9](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L9)
 
 ___
 
@@ -55,7 +56,7 @@ ___
 
 #### Defined in
 
-[halli.ts:10](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L10)
+[halli.ts:10](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L10)
 
 ## Methods
 
@@ -82,7 +83,7 @@ array of string hex color codes
 
 #### Defined in
 
-[halli.ts:90](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L90)
+[halli.ts:93](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L93)
 
 ___
 
@@ -113,7 +114,7 @@ array of string hex color codes
 
 #### Defined in
 
-[halli.ts:139](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L139)
+[halli.ts:145](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L145)
 
 ___
 
@@ -141,7 +142,31 @@ color code in string form
 
 #### Defined in
 
-[halli.ts:62](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L62)
+[halli.ts:62](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L62)
+
+___
+
+### convertToColorString
+
+▸ `Static` **convertToColorString**(`hex`): `string`
+
+Function will return a '#000000' string set to the appropriate values.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `hex` | `number` | hexadecimal representation of a color |
+
+#### Returns
+
+`string`
+
+#000000
+
+#### Defined in
+
+[halli.ts:228](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L228)
 
 ___
 
@@ -165,7 +190,7 @@ Useful for checking front padding of a hex color code
 
 #### Defined in
 
-[halli.ts:45](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L45)
+[halli.ts:45](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L45)
 
 ___
 
@@ -189,7 +214,7 @@ R, G, B codes
 
 #### Defined in
 
-[halli.ts:31](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L31)
+[halli.ts:31](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L31)
 
 ___
 
@@ -213,7 +238,7 @@ R, G, B, A codes
 
 #### Defined in
 
-[halli.ts:187](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L187)
+[halli.ts:196](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L196)
 
 ___
 
@@ -237,4 +262,4 @@ rgb(r, g, b)
 
 #### Defined in
 
-[halli.ts:207](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L207)
+[halli.ts:216](https://github.com/clok/halli/blob/35a5ef7/src/halli.ts#L216)

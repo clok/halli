@@ -1,6 +1,6 @@
-[halli - v0.1.2](README.md) / Exports
+[halli - v0.2.0](README.md) / Exports
 
-# halli - v0.1.2
+# halli - v0.2.0
 
 ## Table of contents
 
