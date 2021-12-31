@@ -39,14 +39,15 @@ describe('Halli', () => {
     it('consistently returns the same value', () => {
       const picker = new Halli()
       const check = picker.genMultiHexArray([0x00ff00, 0xffff00, 0xff0000], 3)
+      console.log(check)
       expect(check.length).toBe(7)
       expect(check).toEqual([
         '00ff00',
-        '555400',
-        'aba900',
+        '55ff00',
+        'aaff00',
         'ffff00',
-        '154ff00',
-        '1a9ff00',
+        'ffaa00',
+        'ff5500',
         'ff0000',
       ])
     })
@@ -65,6 +66,13 @@ describe('Halli', () => {
   describe('hexToRGBstr', () => {
     it('consistently returns the same value', () => {
       expect(Halli.hexToRGBstr('ffffff')).toBe('rgb(255, 255, 255)')
+    })
+  })
+
+  describe('convertToColorString', () => {
+    it('consistently returns the same value', () => {
+      expect(Halli.convertToColorString(0xffffff)).toBe('#ffffff')
+      expect(Halli.convertToColorString(0xab12f8)).toBe('#ab12f8')
     })
   })
 })

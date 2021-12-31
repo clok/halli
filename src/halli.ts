@@ -66,7 +66,10 @@ export class Halli {
     const {r, g, b} = Halli.getRGBComponents(hc1)
 
     // RGB Delta between hc1 and hc2
-    const {r: rd, g: gd, b: bd} = Halli.getRGBComponents(hc2)
+    const {r: r2, g: g2, b: b2} = Halli.getRGBComponents(hc2)
+    const rd = r2 - r
+    const gd = g2 - g
+    const bd = b2 - b
 
     // Calculate new color
     return Halli.frontPad(
@@ -97,7 +100,10 @@ export class Halli {
     const {r, g, b} = Halli.getRGBComponents(hc1)
 
     // RGB Delta between hc1 and hc2
-    const {r: rd, g: gd, b: bd} = Halli.getRGBComponents(hc2)
+    const {r: r2, g: g2, b: b2} = Halli.getRGBComponents(hc2)
+    const rd = r2 - r
+    const gd = g2 - g
+    const bd = b2 - b
 
     // smoother gradient
     steps++
@@ -152,7 +158,10 @@ export class Halli {
       const {r, g, b} = Halli.getRGBComponents(hc1)
 
       // RGB Delta between hc1 and hc2
-      const {r: rd, g: gd, b: bd} = Halli.getRGBComponents(hc2)
+      const {r: r2, g: g2, b: b2} = Halli.getRGBComponents(hc2)
+      const rd = r2 - r
+      const gd = g2 - g
+      const bd = b2 - b
 
       // Determine new colors
       for (let j = 1; j < steps; j++) {
@@ -208,5 +217,16 @@ export class Halli {
     // Break hc1 into RGB components
     const rgba = Halli.hexToRGBA(hex)
     return `rgb(${rgba.r}, ${rgba.g}, ${rgba.b})`
+  }
+
+  /**
+   * Function will return a '#000000' string set to the appropriate values.
+   *
+   * @param hex - hexadecimal representation of a color
+   * @returns #000000
+   */
+  public static convertToColorString(hex: number): string {
+    // Break hc1 into RGB components
+    return `#${hex.toString(16)}`
   }
 }
