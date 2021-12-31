@@ -1,4 +1,4 @@
-[halli - v0.1.1](../README.md) / [Exports](../modules.md) / <internal\>
+[halli - v0.1.2](../README.md) / [Exports](../modules.md) / <internal\>
 
 # Namespace: <internal\>
 
@@ -25,4 +25,4 @@
 
 #### Defined in
 
-[halli.ts:1](https://github.com/clok/halli/blob/2ec952d/src/halli.ts#L1)
+[halli.ts:1](https://github.com/clok/halli/blob/22806b2/src/halli.ts#L1)
