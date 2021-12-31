@@ -1,6 +1,6 @@
 {
   "name": "halli",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Color gradient generator and color picker",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
