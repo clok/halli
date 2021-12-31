@@ -14,6 +14,12 @@ dynamically generate color gradients that can be used. I published an [ImpactJS 
 
 Recently, I have found the need for generating colors. So, here we are.
 
+## Installation
+
+```text
+$ npm install --save halli
+```
+
 ## Usage
 
 > See [`Halli` class documentation](./docs/classes/Halli.md)
