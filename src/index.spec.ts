@@ -4,12 +4,21 @@ describe('Halli', () => {
   describe('pickHex', () => {
     it('consistently returns the same value for a ratio in range', () => {
       const picker = new Halli()
-      expect(picker.pickHex(0x00000, 0xffffff, 0.5)).toBe('7f7f7f')
+      expect(picker.pickHex(0x000000, 0xffffff, 0.5)).toBe('7f7f7f')
     })
 
     it('consistently returns the same value for a ratio in range [ratio > 1]', () => {
       const picker = new Halli()
-      expect(picker.pickHex(0x00000, 0xffffff, 1.5)).toBe('ffffff')
+      expect(picker.pickHex(0x000000, 0xffffff, 1.5)).toBe('ffffff')
+    })
+
+    it('pick correct length color [edge case]', () => {
+      const picker = new Halli()
+      expect(picker.pickHex(0xffffff, 0xff0000, 0)).toBe('ffffff')
+      expect(picker.pickHex(0xffffff, 0xff0000, 1)).toBe('ff0000')
+      expect(picker.pickHex(0xffffff, 0xff0000, 0.5)).toBe('ff7f7f')
+      expect(picker.pickHex(0xffffff, 0xff0000, Math.random())).toHaveLength(6)
+      expect(picker.pickHex(16777215, 16711680, 0.5)).toBe('ff7f7f')
     })
   })
 
@@ -39,7 +48,6 @@ describe('Halli', () => {
     it('consistently returns the same value', () => {
       const picker = new Halli()
       const check = picker.genMultiHexArray([0x00ff00, 0xffff00, 0xff0000], 3)
-      console.log(check)
       expect(check.length).toBe(7)
       expect(check).toEqual([
         '00ff00',
