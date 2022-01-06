@@ -8,11 +8,17 @@ Color gradient generator and picker
 
 ## Why?
 
-Many moons ago I had a need to efficiently generate colors for [particle effects in a game engine](https://clokwork.net/articles/sublime-text-emacs/).
+Many moons ago I had a need to efficiently generate colors for [particle effects in a game engine](https://clokwork.net/articles/particle-generation-in-impactjs/).
 It was a fun problem to work on and resulted in writing [some fun code](https://clokwork.net/articles/simplifying-color-selection/) to
 dynamically generate color gradients that can be used. I published an [ImpactJS plugin](https://github.com/clok/impactjs-color-picker) as well. 
 
 Recently, I have found the need for generating colors. So, here we are.
+
+## Installation
+
+```text
+$ npm install --save halli
+```
 
 ## Usage
 
