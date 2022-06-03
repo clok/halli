@@ -5,11 +5,14 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run clean && tsc --declaration && npm run minify",
     "build:docs": "typedoc && cp CHANGELOG.md docs/ && cp CONTRIBUTING.md docs/ && cp README.md docs/ && cp LICENSE docs/",
     "changelog": "git-chglog -o CHANGELOG.md --next-tag v$(grep '\\\"version\\\":' package.json | grep -v git-chglog | awk -F '\\\"' '{print $4}')",
+    "clean": "rm -rf dist coverage",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "minify:release": "uglifyjs ./dist/halli.js ./dist/min.js --compress --mangle --wrap halli --output \"./dist/halli.$(git describe --abbrev=0).min.js\"",
+    "minify": "uglifyjs ./dist/halli.js ./dist/min.js --compress --mangle --wrap halli --output \"./dist/halli.dev.min.js\"",
     "prepare": "husky install",
     "test": "jest --coverage",
     "test:watch": "jest --watch --coverageReporters=\"lcov\" --coverage",
@@ -41,7 +44,8 @@
     "typedoc": "0.22.14",
     "typedoc-plugin-markdown": "3.11.14",
     "typedoc-plugin-missing-exports": "0.22.6",
-    "typescript": "4.6.3"
+    "typescript": "4.6.3",
+    "uglify-js": "^3.15.5"
   },
   "jest": {
     "clearMocks": true,
@@ -54,6 +58,9 @@
     ],
     "collectCoverageFrom": [
       "src/**/*.{ts,js,jsx,mjs}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/min.ts"
     ],
     "setupFiles": [],
     "testMatch": [

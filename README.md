@@ -4,7 +4,7 @@
 
 Color gradient generator and picker
 
-![image](https://clokwork.net/images/color-select-sample.png)
+![image](https://clok.sh/assets/img/color-select-sample.png)
 
 ## Why?
 
@@ -70,6 +70,13 @@ const pix = picker.genMultiHexArray(
 3. Run linters :broom: `npm run lint`
 4. Commit with a [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/)
 5. Open a PR
+
+### Local Demo
+
+1. Clone the repo
+2. `npm install`
+3. `npm build`
+4. `open ./demo.html`
 
 #### Why is it named `halli`?
 

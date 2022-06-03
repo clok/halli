@@ -68,6 +68,7 @@ h1 "Preparing release of $VERSION"
 
 h2 "Updating distribution"
 npm run build
+npm run minify:release
 
 h2 "Updating docs"
 npm run build:docs
