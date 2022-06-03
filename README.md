@@ -4,7 +4,7 @@
 
 Color gradient generator and picker
 
-![image](https://clok.sh/assets/img/color-select-sample.png)
+[<img src="https://clok.sh/assets/img/color-select-sample.png">](https://clok.sh/demos/halli)
 
 ## Why?
 
@@ -16,9 +16,33 @@ Recently, I have found the need for generating colors. So, here we are.
 
 ## Installation
 
+As a module
 ```text
 $ npm install --save halli
 ```
+
+As a script tag
+```html
+<script type="text/javascript" src="https://clok.sh/assets/js/halli.v0.3.1.min.js" />
+<script type="text/javascript">
+  // Initialize Halli object
+  var picker = new Halli;
+
+  // Generate and draw fade between White and Black with 400 steps
+  var fade = picker.genHexArray(0xFFFFFF, 0x000000, 400);
+
+  // Generate the Matlab Jet colormap with 80 steps between each color
+  var jet = picker.genMultiHexArray([0x0000FF, 0x00FFFF, 0x00FF00, 0xFFFF00, 0xFF0000, 0x000000], 80);
+
+  // Generate the Matlab HSV colormap with 70 steps between each color
+  var hsv = picker.genMultiHexArray([0xFF0000, 0xFFFF00, 0x00FF00, 0x00FFFF, 0x0000FF, 0xFF00FF, 0x000000], 70);
+</script>
+```
+
+## Demo
+
+See [demo](https://clok.sh/demos/halli)
+
 
 ## Usage
 
