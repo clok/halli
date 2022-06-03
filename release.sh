@@ -68,7 +68,7 @@ h1 "Preparing release of $VERSION"
 
 h2 "Updating distribution"
 npm run build
-npm run minify:release
+VERSION=${VERSION} npm run minify:release
 
 h2 "Updating docs"
 npm run build:docs
@@ -83,5 +83,10 @@ fi
 h2 "Updating CHANGELOG.md"
 git-chglog --next-tag $VERSION -o CHANGELOG.md && git add CHANGELOG.md
 git commit -m "chore(release): updating CHANGELOG for $VERSION"
+
+note "Commands to run:"
+note "1. git push origin main"
+note "2. git push origin $VERSION"
+note "3. npm publish"
 
 success "Done!"

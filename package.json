@@ -11,7 +11,7 @@
     "clean": "rm -rf dist coverage",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "minify:release": "uglifyjs ./dist/halli.js ./dist/min.js --compress --mangle --wrap halli --output \"./dist/halli.$(git describe --abbrev=0).min.js\"",
+    "minify:release": "uglifyjs ./dist/halli.js ./dist/min.js --compress --mangle --wrap halli --output \"./dist/halli.$([ \"$VERSION\" == \"\" ] && echo \"$(git describe --abbrev=0)\" || echo \"$VERSION\").min.js\"",
     "minify": "uglifyjs ./dist/halli.js ./dist/min.js --compress --mangle --wrap halli --output \"./dist/halli.dev.min.js\"",
     "prepare": "husky install",
     "test": "jest --coverage",
