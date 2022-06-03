@@ -1,14 +1,14 @@
-[halli - v0.2.1](../README.md) / [Exports](../modules.md) / <internal\>
+[halli - v0.3.0](../README.md) / [Exports](../modules.md) / <internal\>
 
 # Namespace: <internal\>
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [IRGB](internal_.md#irgb)
 
-## Type aliases
+## Type Aliases
 
 ### IRGB
 
@@ -25,4 +25,4 @@
 
 #### Defined in
 
-[halli.ts:1](https://github.com/clok/halli/blob/9a68d16/src/halli.ts#L1)
+[halli.ts:1](https://github.com/clok/halli/blob/1192e14/src/halli.ts#L1)

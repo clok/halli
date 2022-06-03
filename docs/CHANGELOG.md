@@ -2,10 +2,21 @@
 ## [Unreleased]
 
 
+<a name="v0.2.1"></a>
+## [v0.2.1] - 2022-01-06
+### Chore
+- update readme links
+- update README
+- **deps:** update all non-major dependencies ([#9](https://github.com/clok/halli/issues/9))
+- **docs:** updating docs for version v0.2.1
+- **test:** update test cases
+
+
 <a name="v0.2.0"></a>
 ## [v0.2.0] - 2021-12-31
 ### Chore
 - **docs:** updating docs for version v0.2.0
+- **release:** updating CHANGELOG for v0.2.0
 
 ### Fix
 - **genMultiHexArray:** correct color delta math
@@ -57,7 +68,8 @@
 - **ts:** initial port to typescript
 
 
-[Unreleased]: https://github.com/clok/halli/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/clok/halli/compare/v0.2.1...HEAD
+[v0.2.1]: https://github.com/clok/halli/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/clok/halli/compare/v0.1.2...v0.2.0
 [v0.1.2]: https://github.com/clok/halli/compare/v0.1.1...v0.1.2
 [v0.1.1]: https://github.com/clok/halli/compare/v0.1.0...v0.1.1
