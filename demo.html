@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script type="text/javascript" src="./dist/halli.dev.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400">
+      Your browser does not support the canvas element.
+    </canvas>
+
+    <canvas id="canvas2" width="400" height="400">
+      Your browser does not support the canvas element.
+    </canvas>
+
+    <canvas id="canvas3" width="400" height="400">
+      Your browser does not support the canvas element.
+    </canvas>
+
+    <canvas id="canvas4" width="400" height="400">
+      Your browser does not support the canvas element.
+    </canvas>
+
+    <script type="text/javascript">
+      // Initialize ColorPicker object
+      var picker = new Halli;
+
+      // Quick and dirty render of Array colors
+      function drawBoxes(ctx, colors, str){
+        var x = 0;
+        var y = 0;
+        var j = 0;
+        for (var i = 0; i < colors.length; i++) {
+          ctx.fillStyle = `#${colors[i]}`;
+          ctx.fillRect( x, y, 20, 20 );
+          x += 20;
+          if (x + 20 > canvas.width){
+            j++;
+            x = 0;
+            y = j*20;
+          }
+        }
+        ctx.font = "bold 18px monospace";
+        ctx.textAlign = 'center';
+        ctx.fillText(str, 200, 40);
+      };
+
+      // Use the hexToRGBA converter to use the createImageData method
+
+      // Use the hexToRGBA converter to use the createImageData method
+      // Allows for fast generation of pixels
+      function drawPixels(ctx, colors, picker, str){
+        var x = 0;
+        var y = 0;
+        var id = ctx.createImageData( 1, 1 );
+        var d  = id.data;
+        for (var i = 0; i < colors.length; i++) {
+          var rgba = Halli.hexToRGBA( colors[i] );
+          d[0] = rgba.r;
+          d[1] = rgba.g;
+          d[2] = rgba.b;
+          d[3] = rgba.a;
+          ctx.putImageData( id, x, y );
+          x++;
+          if (x > canvas.width){
+            x = 0;
+            y++;
+          }
+        }
+        ctx.font = "bold 18px monospace";
+        ctx.textAlign = 'center';
+        ctx.fillText(str, 200, 40);
+      };
+
+      // Generate and draw fade between White and Black with 400 steps
+      var fade = picker.genHexArray(0xFFFFFF, 0x000000, 400);
+      var c = document.getElementById("canvas");
+      var ctx = c.getContext("2d");
+      drawBoxes(ctx, fade, "Two Color Fade");
+
+      // Generate the Matlab Jet colormap with 80 steps between each color
+      // then render
+      var jet = picker.genMultiHexArray([0x0000FF, 0x00FFFF, 0x00FF00, 0xFFFF00, 0xFF0000, 0x000000], 80);
+      var c2 = document.getElementById("canvas2");
+      var ctx2 = c2.getContext("2d");
+      drawBoxes(ctx2, jet, "Matlab Jet");
+
+      // Generate the Matlab HSV colormap with 70 steps between each color
+      // then render
+      var hsv = picker.genMultiHexArray([0xFF0000, 0xFFFF00, 0x00FF00, 0x00FFFF, 0x0000FF, 0xFF00FF, 0x000000], 70);
+      var c3 = document.getElementById("canvas3");
+      var ctx3 = c3.getContext("2d");
+      drawBoxes(ctx3, hsv, "Matlab HSV");
+
+      // Regenerate the Matlab HSV colormap in a higher resolution with
+      // 27,000 steps between each color.
+      // Use the createImageData method to quickly render the colormap
+      // with each entry in the array represneted by a single pixel.
+      var pix = picker.genMultiHexArray([0xFF0000, 0xFFFF00, 0x00FF00, 0x00FFFF, 0x0000FF, 0xFF00FF, 0x000000], 27000);
+      var c4 = document.getElementById("canvas4");
+      var ctx4 = c4.getContext("2d");
+      drawPixels(ctx4, pix, picker, "Matlab HSV HighRes");
+    </script>
+  </body>
+</html>
