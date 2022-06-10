@@ -2,10 +2,23 @@
 ## [Unreleased]
 
 
+<a name="v1.0.0"></a>
+## [v1.0.0] - 2022-06-10
+### Chore
+- update readme
+- **deps:** update all non-major dependencies ([#22](https://github.com/clok/halli/issues/22))
+- **deps:** update all non-major dependencies ([#21](https://github.com/clok/halli/issues/21))
+- **docs:** updating docs for version v1.0.0
+
+### Feat
+- **css color:** support CSS style 6 digit hex color codes ([#23](https://github.com/clok/halli/issues/23))
+
+
 <a name="v0.3.1"></a>
 ## [v0.3.1] - 2022-06-03
 ### Chore
 - **docs:** updating docs for version v0.3.1
+- **release:** updating CHANGELOG for v0.3.1
 
 ### Fix
 - patch relase process
@@ -98,7 +111,8 @@
 - **ts:** initial port to typescript
 
 
-[Unreleased]: https://github.com/clok/halli/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/clok/halli/compare/v1.0.0...HEAD
+[v1.0.0]: https://github.com/clok/halli/compare/v0.3.1...v1.0.0
 [v0.3.1]: https://github.com/clok/halli/compare/v0.3.0...v0.3.1
 [v0.3.0]: https://github.com/clok/halli/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/clok/halli/compare/v0.2.0...v0.2.1
