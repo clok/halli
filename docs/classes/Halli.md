@@ -1,4 +1,4 @@
-[halli - v0.3.1](../README.md) / [Exports](../modules.md) / Halli
+[halli - v1.0.0](../README.md) / [Exports](../modules.md) / Halli
 
 # Class: Halli
 
@@ -19,10 +19,11 @@
 - [genMultiHexArray](Halli.md#genmultihexarray)
 - [pickHex](Halli.md#pickhex)
 - [convertToColorString](Halli.md#converttocolorstring)
+- [convertToNumber](Halli.md#converttonumber)
 - [frontPad](Halli.md#frontpad)
 - [getRGBComponents](Halli.md#getrgbcomponents)
 - [hexToRGBA](Halli.md#hextorgba)
-- [hexToRGBstr](Halli.md#hextorgbstr)
+- [hexToRGBAstr](Halli.md#hextorgbastr)
 
 ## Constructors
 
@@ -36,7 +37,7 @@ to Red gradient with 10 steps between each source color.
 
 #### Defined in
 
-[halli.ts:17](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L17)
+[halli.ts:34](https://github.com/clok/halli/blob/82403de/src/halli.ts#L34)
 
 ## Properties
 
@@ -46,7 +47,7 @@ to Red gradient with 10 steps between each source color.
 
 #### Defined in
 
-[halli.ts:9](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L9)
+[halli.ts:26](https://github.com/clok/halli/blob/82403de/src/halli.ts#L26)
 
 ___
 
@@ -56,7 +57,7 @@ ___
 
 #### Defined in
 
-[halli.ts:10](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L10)
+[halli.ts:27](https://github.com/clok/halli/blob/82403de/src/halli.ts#L27)
 
 ## Methods
 
@@ -71,8 +72,8 @@ and populate a return array.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `hc1` | `number` | hexadecimal number representing color |
-| `hc2` | `number` | hexadecimal number representing color |
+| `hc1` | `string` \| `number` | hexadecimal number representing color |
+| `hc2` | `string` \| `number` | hexadecimal number representing color |
 | `steps` | `number` | the number of colors to generate between two colors |
 
 #### Returns
@@ -83,7 +84,7 @@ array of string hex color codes
 
 #### Defined in
 
-[halli.ts:93](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L93)
+[halli.ts:135](https://github.com/clok/halli/blob/82403de/src/halli.ts#L135)
 
 ___
 
@@ -103,7 +104,7 @@ each source color. Total of 23 color codes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | `number`[] | array of hexadecimal numbers representing colors |
+| `input` | `string`[] \| `number`[] | array of hexadecimal numbers representing colors |
 | `steps` | `number` | the number of colors to generate between two colors |
 
 #### Returns
@@ -114,7 +115,7 @@ array of string hex color codes
 
 #### Defined in
 
-[halli.ts:145](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L145)
+[halli.ts:191](https://github.com/clok/halli/blob/82403de/src/halli.ts#L191)
 
 ___
 
@@ -130,19 +131,19 @@ gradient color should be selected from.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `hc1` | `number` | hexadecimal number representing color |
-| `hc2` | `number` | hexadecimal number representing color |
+| `hc1` | `string` \| `number` | hexadecimal number representing color |
+| `hc2` | `string` \| `number` | hexadecimal number representing color |
 | `ratio` | `number` | the point in the gradient color to be selected |
 
 #### Returns
 
 `string`
 
-color code in string form
+IHexColorString color code in string form
 
 #### Defined in
 
-[halli.ts:62](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L62)
+[halli.ts:100](https://github.com/clok/halli/blob/82403de/src/halli.ts#L100)
 
 ___
 
@@ -162,11 +163,35 @@ Function will return a '#000000' string set to the appropriate values.
 
 `string`
 
-#000000
+`#000000`
 
 #### Defined in
 
-[halli.ts:228](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L228)
+[halli.ts:281](https://github.com/clok/halli/blob/82403de/src/halli.ts#L281)
+
+___
+
+### convertToNumber
+
+▸ `Static` `Protected` **convertToNumber**(`input`): `number`
+
+Convert IHexColorNumber or IHexColorString to IHexColorNumber
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `input` | `string` \| `number` | convert a hex code string to a number |
+
+#### Returns
+
+`number`
+
+Number
+
+#### Defined in
+
+[halli.ts:65](https://github.com/clok/halli/blob/82403de/src/halli.ts#L65)
 
 ___
 
@@ -190,13 +215,13 @@ Useful for checking front padding of a hex color code
 
 #### Defined in
 
-[halli.ts:45](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L45)
+[halli.ts:83](https://github.com/clok/halli/blob/82403de/src/halli.ts#L83)
 
 ___
 
 ### getRGBComponents
 
-▸ `Static` `Private` **getRGBComponents**(`hex`): [`IRGB`](../modules/internal_.md#irgb)
+▸ `Static` `Private` **getRGBComponents**(`input`): [`IRGB`](../modules.md#irgb)
 
 Break down hex value into RGB components
 
@@ -204,23 +229,23 @@ Break down hex value into RGB components
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `hex` | `number` | hexadecimal number representing color |
+| `input` | `string` \| `number` | hexadecimal IHexColorNumber or IHexColorString representing color |
 
 #### Returns
 
-[`IRGB`](../modules/internal_.md#irgb)
+[`IRGB`](../modules.md#irgb)
 
 R, G, B codes
 
 #### Defined in
 
-[halli.ts:31](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L31)
+[halli.ts:48](https://github.com/clok/halli/blob/82403de/src/halli.ts#L48)
 
 ___
 
 ### hexToRGBA
 
-▸ `Static` **hexToRGBA**(`hex`): [`IRGB`](../modules/internal_.md#irgb)
+▸ `Static` **hexToRGBA**(`hex`): [`IRGB`](../modules.md#irgb)
 
 Function will return an object with \{r,g,b,a\} set to appropriate values.
 
@@ -232,21 +257,21 @@ Function will return an object with \{r,g,b,a\} set to appropriate values.
 
 #### Returns
 
-[`IRGB`](../modules/internal_.md#irgb)
+[`IRGB`](../modules.md#irgb)
 
 R, G, B, A codes
 
 #### Defined in
 
-[halli.ts:196](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L196)
+[halli.ts:245](https://github.com/clok/halli/blob/82403de/src/halli.ts#L245)
 
 ___
 
-### hexToRGBstr
+### hexToRGBAstr
 
-▸ `Static` **hexToRGBstr**(`hex`): `string`
+▸ `Static` **hexToRGBAstr**(`hex`): \`rgba(${number}, ${number}, ${number}, ${number})\`
 
-Function will return a 'rgb( r,g,b )' string set to the appropriate values.
+Function will return a 'rgba( r,g,b,a )' string set to the appropriate values.
 
 #### Parameters
 
@@ -256,10 +281,10 @@ Function will return a 'rgb( r,g,b )' string set to the appropriate values.
 
 #### Returns
 
-`string`
+\`rgba(${number}, ${number}, ${number}, ${number})\`
 
-rgb(r, g, b)
+rgba(r, g, b, a)
 
 #### Defined in
 
-[halli.ts:216](https://github.com/clok/halli/blob/2cddfe5/src/halli.ts#L216)
+[halli.ts:269](https://github.com/clok/halli/blob/82403de/src/halli.ts#L269)
